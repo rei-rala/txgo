@@ -2,11 +2,18 @@
 
 # dependencies
 /client/node_modules
+/smart_contracts/node_modules
 /.pnp
 .pnp.js
 
 # testing
 /coverage
+.env
+coverage
+coverage.json
+typechain 
+cache
+artifacts
 
 # next.js
 /client/.next

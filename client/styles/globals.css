@@ -1,9 +1,38 @@
-html,
+:root {
+  --animationTime: 1s;
+  --backgroundColor: hsl(0, 0%, 40%);
+  --backgroundColorDark: hsl(0, 0%, 10%);
+  --navbarBkgColor: hsl(0, 0%, 100%);
+  --navbarBkgColorDark: hsl(0, 0%, 10%);
+  --navHoverColor: hsl(0, 0%, 40%);
+  --navHoverColorDark: hsl(0, 0%, 95%);
+  --sectionBkgColor: hsl(0, 0%, 90%);
+  --sectionBkgColorDark: hsl(0, 0%, 30%);
+  --fontColor: hsl(0, 0%, 10%);
+  --fontColorDark: hsl(0, 0%, 95%);
+
+  --headerHeight: 4rem;
+  --footerHeight: calc(var(--headerHeight) - 1rem);
+
+  --borderRadius: 0.25rem;
+  --paddingSection: 0.5rem;
+}
+
+* {
+  box-sizing: border-box;
+
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  overflow: hidden scroll;
 }
 
 a {
@@ -11,6 +40,60 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+button {
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  height: 2rem;
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+header,
+section,
+footer {
+  transition: background 0.2s ease-in-out;
+}
+
+header,
+footer {
+  z-index: 99999;
+}
+
+header {
+  position: fixed;
+  top: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: var(--headerHeight);
+  width: 100%;
+
+  padding: 0.5rem;
+  cursor: default;
+}
+
+section {
+  position: absolute;
+
+  margin-bottom: var(--footerHeight);
+  min-height: calc(100vh - var(--headerHeight) - var(--footerHeight));
+  width: 100%;
+  padding: var(--paddingSection);
+  padding-top: calc(var(--headerHeight) + var(--paddingSection));
+  padding-bottom: calc(var(--footerHeight) + var(--paddingSection));
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+
+  display: grid;
+  place-items: center;
+
+  height: var(--footerHeight);
+  width: 100vw;
 }

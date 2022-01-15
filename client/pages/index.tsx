@@ -1,20 +1,21 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { Footer, Header, Section } from '../components'
+import { Footer, Header, Section, /* Loader */ } from '../components'
 
 const Home: NextPage = () => {
+
   return (
     <>
       <Head>
-        <title>TxGO</title>
-        <meta name="description" content="Tú, en la blockchain." />
+        <title>TxGO, Tú en la Blockchain</title>
+        <meta name="description" content="Tú, en la Blockchain." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <Header />
+      {/* <Loader /> */}
       <Section />
-      <Footer />
 
+      <Footer />
     </>
   )
 }
